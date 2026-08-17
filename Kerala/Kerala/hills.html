@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keralatourism</title>
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="">
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .main-header ul li a,
+    .main-header ul li i {
+      color: black;
+    }
+
+    .hills-hero {
+      text-align: center;
+      padding: 90px;
+      background-color: #F0F8FF;
+    }
+
+    .hills-hero p,
+    .hills-hero h2 {
+      padding: 4px;
+    }
+
+    .hills-hero a {
+      cursor: pointer;
+    }
+
+    .kerala {
+      padding: 80px 300px;
+    }
+
+    .kerala p {
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+
+    /* filter  */
+    .filter-left {
+      justify-content: left;
+    }
+
+    .filter-left i,
+    .filter-left h3,
+    .filter-left .more {
+      display: block;
+    }
+
+    .filter-left .more {
+      border-color: #F79A04;
+      padding: 12px 30px;
+    }
+
+    .card {
+      height: 500px;
+    }
+
+    .filter-pageno {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .filter-pageno span {
+      border: 1px solid #F79A04;
+      border-radius: 50%;
+      padding: 15px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: #F79A04;
+      color: #F0F8FF;
+    }
+
+    /* north-kerala */
+    .north-kerala {}
+
+    .north-kerala h1 {
+      margin: 150px 0 80px 0;
+      text-align: center;
+    }
+
+    .kerala-img {
+      height: 72vh;
+      position: relative;
+      width: 570px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .kerala-img img {
+      height: 100%;
+      width: 450px;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+
+    }
+
+    .kerala-img img:hover {
+      transform: scale(1.07);
+    }
+
+    .kerala-img h2 {
+      position: absolute;
+      bottom: 20px;
+      left: 22px;
+      color: #f0f8ff89;
+
+      transition: all 0.5s ease;
+    }
+
+    .kerala-img:hover h2 {
+      bottom: 60px;
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .video-slider {
+      margin-top: 150px;
+    }
+
+    .first-video {
+      width: 100%;
+      height: 500px;
+      position: relative;
+    }
+
+    .first-video img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .text {
+      background-color: #D6D4D1;
+      padding: 12px;
+      width: 32%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .row-img {
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .row-img img {
+      transition: all 0.8s ease;
+    }
+
+    .row-img img:hover {
+      transform: scale(1.08);
+
+    }
+
+    .gallery-text {
+      position: absolute;
+      bottom: 40px;
+      left: 42px;
+      transition: all 0.8s ease;
+    }
+
+    .row-img:hover .gallery-text{
+      bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header style=" height: auto;">
+    <div class="main-header">
+      <nav class="flex" style="z-index: 100000;">
+        <img src="https://www.keralatourism.org/images/logo/logo.png" alt="Logo">
+        <ul class="flex">
+          <li><a href="./">Where to go</a></li>
+          <li><a href="./">Experiences</a></li>
+          <li><a href="./">Plan you trip</a></li>
+        </ul>
+
+        <ul class="flex">
+          <li><i class="fa-solid fa-magnifying-glass"></i></li>
+          <li><i class="fa-solid fa-bars"></i></li>
+        </ul>
+      </nav>
+
+      <div class="hills-hero">
+        <p><a href="home.html">Home</a> - <a href="./"> Destination </a> - <a href="hills.html">Hills</a></p>
+        <h2>Hills</h2>
+      </div>
+
+      <div class="kerala">
+        <p>Kerala brings to you a magical tryst with nature through its various hills and hill stations. A majority of
+          these places in Kerala are situated on the windward side of the majestic Western Ghats. Enjoy the long chain
+          of lush mist-clad hill stations of Kerala and explore the various plantations, wildlife, flora and fauna that
+          comprise an integral part of this experience.</p>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="filter">
+    <div class="container">
+      <div class="filter-top-row flex">
+        <div class="filter-left flex">
+          <i class="fa-solid fa-filter"></i>
+          <h3>Filter By</h3>
+          <div class="more flex">South <i class="fa-solid fa-angle-down"></i></div>
+          <div class="more flex">Districts <i class="fa-solid fa-angle-down"></i></div>
+        </div>
+
+        <div class="filter-right">
+          <div class="more flex">Hills <i class="fa-solid fa-angle-down"></i></div>
+        </div>
+      </div>
+
+      <div class="filter-main-row">
+        <div class="filter-row">
+          <div class="Stunning flex">
+            <!-- card 1 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fvazhikkadavu-1724145275_a2dd2b395417d56defc8.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Vazhikkadavu</h2>
+
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div class="card">
+              <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/64/14/5d/photo1jpg.jpg?w=1200&h=-1&s=1"
+                alt="">
+              <div class="card-content">
+                <h2>Echo Point in Munnar</h2>
+
+              </div>
+            </div>
+            <!-- card 3 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fgavi-1715602265_d69e06888639acea26ea.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Gavi</h2>
+
+              </div>
+            </div>
+          </div>
+          <div class="Stunning flex">
+            <!-- card 1 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fcharalkunnu-hills-1708330692_cfc93fc23ccf6d2e2d44.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Charalkunnu Hills</h2>
+
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div class="card">
+              <img
+                src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/53/a3/c5/madavoorpara-siva-temple.jpg?w=1200&h=1200&s=1"
+                alt="">
+              <div class="card-content">
+                <h2>Madavoorpara</h2>
+
+              </div>
+            </div>
+            <!-- card 3 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fchuttippara-1730209963_46e4ed0cb7aa1dc0efdb.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Chuttippara</h2>
+
+              </div>
+            </div>
+          </div>
+          <div class="Stunning flex">
+            <!-- card 1 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fanjumalappara-1748509410_fe8ea37a4ac216fe043d.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Anjumalappara</h2>
+
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Frakshasan-para-c8dfea06d5webp-20260320123026757779.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Rakshasan Para</h2>
+
+              </div>
+            </div>
+            <!-- card 3 -->
+            <div class="card">
+              <img
+                src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fkottappara-viewpoint-aefc208c97webp-20260325231802728514.webp&w=3840&q=75"
+                alt="">
+              <div class="card-content">
+                <h2>Kottappara Viewpoint</h2>
+
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
+        <div class="filter-pageno">
+          <span>&lt</span>
+          <span class="active">1</span>
+          <span>2</span>
+          <span>...</span>
+          <span>5</span>
+          <span>&gt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Hills in North Kerala -->
+
+  <section class="north-kerala">
+    <div class="container">
+      <h1>Hills in North Kerala</h1>
+      <div class="north-main flex">
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fpaithalmala-kannur-1707378012_78088f24b84f18540eba.webp&w=3840&q=75">
+          <h2>Paithalmala</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fmadayipara-1727350671_fdf09f8adcaee91c1142.webp&w=3840&q=75">
+          <h2>Madayipara</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Franipuram-hills-1720437413_9a6b0561e44b3fcb964b.webp&w=3840&q=75">
+          <h2>Ranipuram Hills</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Si0SCRwwrDlGjjyJ2u-DwMdgmQPebsdIZA&s">
+          <h2>Iringal</h2>
+        </div>
+      </div>
+
+      <div class="filter-pageno">
+        <span>&lt</span>
+        <span>&gt</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Hills in Central Kerala -->
+  <section class="north-kerala">
+    <div class="container">
+      <h1>Hills in Central Kerala</h1>
+      <div class="north-main flex">
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fvazhikkadavu-1724145275_a2dd2b395417d56defc8.webp&w=3840&q=75">
+          <h2>Vazhikkadavu</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fecho-point-in-munnar-1707377484_c21afa76c193351457ec.webp&w=3840&q=75">
+          <h2>Echo Point in Munnar</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Framakkalmedu-1726917722_c807d381468cab69c752.webp&w=3840&q=75">
+          <h2>Ramakkalmedu</h2>
+        </div>
+
+        <div class="kerala-img">
+          <img src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Fkuttikanam-1721539388_eb72c30e55500f67ad3f.webp&w=3840&q=75">
+          <h2>Kuttikanam</h2>
+        </div>
+      </div>
+
+      <div class="filter-pageno">
+        <span>&lt</span>
+        <span>&gt</span>
+      </div>
+    </div>
+
+    <div class="video-slider flex">
+      <div class="container flex">
+        <div class="first-video">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Ftablet%2Fmamalakandam-ernakulam-657aa27ae6webp-20260325235015608840.webp&w=1920&q=75"
+            alt="">
+          <div class="text">
+            <h3>Mamalakandam, Ernakulam</h3>
+            <div class="more">View</div>
+          </div>
+        </div>
+        <div class="first-video">
+          <img
+            src="https://www.keralatourism.org/_next/image/?url=https%3A%2F%2Fik.imagekit.io%2Fxsnlqng4k%2FYoutubeImages%2Ftr%3Aw-1920%2Ch-1080%2Fvi%2FJqdO7H4RQMQ%2Fmaxresdefault.jpg&w=1920&q=75"
+            alt="">
+          <div class="text">
+            <h3>Mamalakandam, Ernakulam</h3>
+            <div class="more">View</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+  </section>
+
+  <section style="margin: 250px 0;" class="hills-gallery">
+    <div class="container">
+      <div class="first flex" style=" height: 550px; align-items: start;">
+        <div class="row-img" style="flex: 50%; height: 50vh; position: relative;">
+          <img style="width: 100%; height: 450px; border-radius: 15px;"
+            src="https://ayurvedicvillage.com/blog/wp-content/uploads/2021/01/ayurveda-if-life-image.jpg" alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">Ayurveda</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+
+        <div class="row-img" style="flex: 25%;  height: 550px; display: flex; align-items: start;  position: relative;">
+          <img style=" height: 550px; width: 100%; border-radius: 15px;"
+            src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202410/thrissur-pooram-212447167-3x4_0.jpg?VersionId=pBQ4uaPEXmaStl5v7N8EoQ29n2jSIfcp"
+            alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">Event</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+
+        <div class="row-img" style="flex: 25%;  height: 550px; display: flex; align-items: start;  position: relative;">
+          <img style=" height: 550px; width: 100%; border-radius: 15px;"
+            src="https://cdn.cholantours.com/city_attraction_todos/1772876112_kathakali-kerala.webp" alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">Artforms</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="first flex" style=" height: 550px; align-items: start;">
+        <div class="row-img"
+          style="flex: 25%;  height: 550px; display: flex; align-items: start; margin-top: -65px;  position: relative;">
+          <img style=" height: 550px; width: 100%; border-radius: 15px;"
+            src="https://i.pinimg.com/236x/67/e4/6a/67e46aa2db2685fef4fbf136b58b0443.jpg" alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">Cuisine</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+
+        <div class="row-img"
+          style="flex: 25%;  height: 550px; display: flex; align-items: start;  margin-top: -65px;  position: relative;">
+          <img style=" height: 550px; width: 100%; border-radius: 15px;"
+            src="https://i.pinimg.com/736x/22/d5/8f/22d58fe9f889ca72107f4f9e02aaf1b3.jpg" alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">Gallery</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+
+        <div class="row-img" style="flex: 54%; height: 50vh; margin-top: 32px;  position: relative;">
+          <img style="width: 100%; height: 450px; border-radius: 15px;"
+            src="https://images.unsplash.com/photo-1603098091396-98fc15ec5ce3?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cGFyYWNodXRlfGVufDB8fDB8fHww"
+            alt="">
+          <div class="gallery-text" >
+            <h3 style="font-size: 45px; margin-bottom: 22px; color: white;">E-brochure</h3>
+            <div class="more" style="color: white;">Explore &gt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Connect with us -->
+  <section class="contact-us">
+    <div class="container">
+   
+
+  
+      <div class="services  ">
+        <div class="service-sub flex main-social">
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/ktil-logo.png"
+                alt=""></div>
+            <div class="service-content">
+              <h2>KTIL</h2>
+              <h4>Building God's Own Country</h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/dtpc.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>DTPc</h2>
+              <h4>Discover the best of Kerala through the DTPCs</h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/ktdc.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KTDC</h2>
+              <h4>Discover your perfect stay via KTDC
+
+
+
+              </h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/katps.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KATPS</h2>
+              <h4>Explore Kerala's adventure sports through KATPS
+
+              </h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/kitts.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KITTS</h2>
+              <h4>Building God's Own Country</h4>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-explore flex">
+        <ul>
+          <li>
+            <h2>Explore</h2>
+          </li>
+          <li><a href="./">Classification Schemes</a></li>
+          <li><a href="./"> Official Mobile App</a></li>
+          <li><a href="./"> Newsletter</a></li>
+          <li><a href="./"> Responsible Tourism</a></li>
+          <li><a href="./"> Ecotourism</a></li>
+          <li><a href="./"> Tourism Administrators</a></li>
+        </ul>
+
+
+        <ul>
+          <li>
+            <h2>Travel Hub</h2>
+          </li>
+          <li><a href="./">Kerala at a Glance</a></li>
+          <li><a href="./"> Travel Care</a></li>
+          <li><a href="./"> Plan Your Trip</a></li>
+          <li><a href="./"> Souvenirs</a></li>
+          <li><a href="./"> Travel Tips</a></li>
+          <li><a href="./"> Accommodation</a></li>
+          <li><a href="./"> FAQs</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Nature</h2>
+          </li>
+          <li><a href="./">Hills</a></li>
+          <li><a href="./"> Backwaters</a></li>
+          <li><a href="./"> Beaches</a></li>
+          <li><a href="./"> Wildlife</a></li>
+          <li><a href="./"> Waterfalls</a></li>
+          <li><a href="./"> Islands</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Places</h2>
+          </li>
+          <li><a href="./">Munnar</a></li>
+          <li><a href="./"> Wayanad</a></li>
+          <li><a href="./"> kovalam</a></li>
+          <li><a href="./"> Kumarakom</a></li>
+          <li><a href="./"> Fort Kochi</a></li>
+          <li><a href="./"> varkal</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Specialities</h2>
+          </li>
+          <li><a href="./">Ayurveda</a></li>
+          <li><a href="./"> Monsoon</a></li>
+          <li><a href="./"> Houseboat</a></li>
+          <li><a href="./"> Kerala Food</a></li>
+          <li><a href="./"> festivals</a></li>
+          <li><a href="./"> ArtForms</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Media</h2>
+          </li>
+          <li><a href="./">Videos</a></li>
+          <li><a href="./"> Photos</a></li>
+          <li><a href="./"> 360 deg videos</a></li>
+          <li><a href="./"> Royalty Free Photos</a></li>
+          <li><a href="./"> Media Room</a></li>
+          <li><a href="./"> Site map</a></li>
+        </ul>
+      </div>
+
+      <br><br>
+      <hr>
+      <div style="margin-top: 45px; justify-content: center; text-align: center; gap: 22px;
+        " class="imp-link flex">
+        <a href="./">Contact</a>
+        <span>|</span>
+        <a href="./">Terms of use</a>
+        <span>|</span>
+        <a href="./">Privacy and policy</a>
+      </div>
+
+      <div class="copy-rigth-main flex">
+        <div class="copy-right">
+          <h4>All rights reserved © Kerala Tourism | Developed & Maintained by Invis</h4>
+        </div>
+        <div class="social-links">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1023 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>keralatourism</title>
+
+  <!-- tailwind css  -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Moon+Dance&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+  <style>
+    .where-to {
+      display: none;
+      position: absolute;
+      top: 90px;
+      z-index: 50000;
+      background-color: white;
+      overflow: hidden;
+      transition: all0.8s ease-in-out;
+    }
+
+    .option-row {
+      margin-top: 60px;
+    }
+
+    .option-card {
+      height: 270px;
+      width: 390px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .option-card img {
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .option-card h3 {
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+      color: white;
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    .option-card img:hover h3 {
+      bottom: 40px;
+    }
+
+    .explore{
+      border: 1px solid rgba(0, 0, 0, 0.539);
+      padding: 12px 18px;
+      border-radius: 40px;
+      transition: all 0.2s ease-in-out;
+    }
+
+     .explore:hover{
+      color: #F79A04;
+      border-color: #F79A04;
+     }
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="main-header" style="z-index: 1000;">
+      <nav class="flex" style="z-index: 100000;">
+        <a href="home.html"><img src="https://www.keralatourism.org/images/logo/logo.png" alt="Logo"></a>
+        <ul class="flex">
+          <li><a href="#" id="where" style="color: black;">Where to go</a></li>
+          <li><a href="#" id="exp" style="color: black;">Experiences</a></li>
+          <li><a href="#" id="plan" style="color: black;">Plan you trip</a></li>
+        </ul>
+
+        <ul class="flex" style="cursor: pointer;">
+          <li ><i  class="fa-solid fa-magnifying-glass" style="color: black;"></i></li>
+          <li><i class="fa-solid fa-bars" id="menu" style="color: black;"></i></li>
+        </ul>
+      </nav>
+
+      <div class="lan-hero">
+        <p>
+        <a href="index.html">Home -</a> <a href="Microsites.html">Microsites</a></p>
+        <h1>Microsites</h1>
+      </div>
+    
+      <div class="location-slider flex">
+        <i>&lt;</i>
+        <h4><a href="backwater.html">Backwater</a></h4>
+        <h4><a href="beaches.html">Beaches</a></h4>
+        <h4><a href="hills.html">Hills</a></h4>
+        <h4><a href="waterfall.html">Waterfalls</a></h4>
+        <i>&gt;</i>
+      </div>
+    </div>
+  </header>
+
+  <div class="side-nav" id="side-nav" style="display: none; height: 100vh; width: 300px; background-color: white; position: absolute; top: 0; right: 0px; z-index: 80000; padding: 30px 20px;">
+    <div><i id="close-menu" style="float: right; cursor: pointer;" class="close-icon fa-solid fa-x" ></i></div>
+    <ul class="flex
+    " style="flex-direction: column;margin-top: 50px; align-items: start;">
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0; " href="#">Language  </a> <i class="fa-solid fa-angle-right right-arrow"  style="margin-left: 125px; cursor: pointer;"></i></li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Event explore  </a> <i class="fa-solid fa-angle-right  right-arrow" style="margin-left:  95px; cursor: pointer;"></i>
+      </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Microsities </a>
+      <i class="fa-solid fa-angle-right  right-arrow" style="margin-left: 115px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">DTPC </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 160px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Newsletter </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 115px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">E Brochures </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 105px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Travel care </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 115px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Photo Gallery </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 95px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px;  cursor: pointer;margin-bottom: 30px; padding: 30px 0;" href="#">Kerala Souvenirs </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 60px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Specialities </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 115px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">Awards </a>
+      <i class="fa-solid fa-angle-right  right-arrow"  style="margin-left: 145px; cursor: pointer;"></i>
+    </li>
+
+      <li class="side-nav-link"><a style="margin-bottom: 20px; margin-bottom: 30px; padding: 30px 0;" href="#">District </a>
+      <i class="fa-solid fa-angle-right  right-arrow" style="margin-left: 145px; cursor: pointer;"></i>
+    </li>
+      
+    </ul>
+  </div>
+
+  <!-- nav content  -->
+
+  <!-- where  to go  -->
+  <section class="where-to" id="where-to" style="margin-top: 50px; display: none;">
+    <div class="container">
+      <div class="close" style="color: #F79A04; border:  2px solid #F79A04; background-color: black; cursor: pointer;"><i style="float: right;margin-top: 12px;" class="fa-solid fa-x"  id="close"></i></div>
+      <div class="sub-link">
+        <ul style="justify-content: center; padding-top:50px ;" class="flex">
+          <li><i class="fa-solid fa-mountain"></i>Attraction</li>
+          <li><i class="fa-brands fa-artstation"></i>Art & culture</li>
+          <li><i class="fa-brands fa-pix"></i>Picnic spots</li>
+          <li><i class="fas fa-location"></i>Region</li>
+          <li><i class="fa-solid fa-ankh"></i>Spirituailty</li>
+        </ul>
+      </div>
+
+      <div class="option-row">
+        <div class="row flex" style="margin-bottom: 30px;">
+          <div class="option-card">
+            <img
+              src="https://images.stockcake.com/public/4/8/7/487760cf-7eb8-4a28-8269-b16e70cfc5b0_large/sunset-beach-stroll-stockcake.jpg"
+              alt="">
+            <h3>Trending</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fmobile%2Franipuram-hills-1720437413_9a6b0561e44b3fcb964b.webp&w=3840&q=75"
+              alt="">
+            <h3>Hills</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://images.indianexpress.com/2022/02/Beach-1200.jpg?w=1200" alt="">
+            <h3>Beaches</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNXA75q5qbVkr8vVDaeCTyEwu_h_Zo0JZTfQ&s"
+              alt="">
+            <h3>Backwater</h3>
+          </div>
+
+        </div>
+        <div class="row flex">
+          <div class="option-card">
+            <img src="https://cdn.britannica.com/99/158799-050-734DFBC5/island-areas-land-Lake-Ann-continent-US.jpg"
+              alt="">
+            <h3>Island</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://media.cntraveler.com/photos/571945e380cf3e034f974b7d/master/pass/waterfalls-Seljalandsfoss-GettyImages-457381095.jpg"
+              alt="">
+            <h3>Waterfall</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://whc.unesco.org/uploads/thumbs/news_2087-890-520-20200723102826.jpg">
+            <h3>Wildlife</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIA9jAC-Ydu5kH1vZP9KtoA4TRRJhu-njtdA&s"
+              alt="">
+            <h3>Trending</h3>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- experiences -->
+  <section style="margin-top: 50px; top:90px; display: none; position: absolute; display: none;" id="exp-show"  >
+    <div class="container" >
+      <div class="close" style="color: #F79A04; border:  2px solid #F79A04; background-color: black; cursor: pointer;"><i style="float: right;margin-top: 12px;" class="fa-solid fa-x"  id="exp-close"></i></div>
+      <div class="sub-link">
+        <ul style="justify-content: center; padding-top:50px ;" class="flex">
+          <li><i class="fa-solid fa-plant-wilt"></i>Responsible Tourism</li>
+          <li><i class="fa-solid fa-leaf"></i>Eco Tourism</li>
+          <li><i class="fa-brands fa-artstation"></i>ArtForm</li>
+          <li><i class="fa-solid fa-fish"></i>Cuisine</li>
+        </ul>
+      </div>
+
+      <div class="option-row">
+        <div class="row flex" style="margin-bottom: 30px;">
+          <div class="option-card">
+            <img
+              src="https://www.keralatourism.org/responsible-tourism/packages/uploads/a-day-with-farmers.jpg"
+              alt="">
+            <h3>Kumarakom Farm Visit</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM6i8koWMRw8-F1R_e7bUlwQC924ZXy5pbKA&s"
+              alt="">
+            <h3>Bekal - Find the Potter</h3>
+          </div>
+          <div class="option-card">
+            <img src="Kovalam Fishing Experiences" alt="">
+            <h3>Kovalam Fishing Experiences</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/images/service-providers/photos/property-3499-Exterior-10668-20180829064103.jpg"
+              alt="">
+            <h3>Wayanad: Coffee Trails</h3>
+          </div>
+
+        </div>
+        <div class="row flex">
+          <div class="option-card">
+            <img src="https://i.ytimg.com/vi/C3e5lPHZ7lI/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCbW52H6Fy0hRTJjvNkt2ADuunJxg"
+              alt="">
+            <h3>Kozhikode Village Life</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://www.keralatourism.org/responsible-tourism/packages/uploads/kunhimangalam-package.jpg"
+              alt="">
+            <h3>Kunhimangalam Bell Metal Village</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://whc.unesco.org/uploads/thumbs/news_2087-890-520-20200723102826.jpg">
+            <h3>Wildlife</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7UV3ObKRM8hPQExyeF2LbAz7KvxQhVV5HVg&s">
+            <h3>Explore</h3>
+          </div>
+          
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- plain your trip -->
+ 
+   <section style="display: block; margin-top: 50px; top:90px;  position: absolute; display: none;" id="plan-show"  >
+    <div class="container" >
+      <div class="plan-close" style="color: #F79A04; border:  2px solid #F79A04; background-color: black; cursor: pointer;"><i style="float: right;margin-top: 12px;" class="fa-solid fa-x"  id="plan-close"></i></div>
+    
+      <div class="option-row">
+        <div class="row flex" style="margin-bottom: 30px;">
+          <div class="plan-card">
+            <img
+              src="https://www.keralatourism.org/ktadmin/img/icons/tourist_information.svg"
+              alt="">
+            <h3>Tourist Information Centers</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://www.keralatourism.org/ktadmin/img/icons/how_to_reach.svg"
+              alt="">
+            <h3>How to Reach</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/ktadmin/img/icons/plan_your_itinerary.svg" alt="">
+            <h3>Yathri Nivas - Book Online</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/ktadmin/img/icons/maps.svg"
+              alt="">
+            <h3>Maps</h3>
+          </div>
+
+        </div>
+        <div class="row flex">
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/ktadmin/img/icons/visa_on_arrival.svg"
+              alt="">
+            <h3>Visa on Arrival</h3>
+          </div>
+          <div class="option-card">
+            <img
+              src="https://www.keralatourism.org/ktadmin/img/icons/emergency_contact.svg"
+              alt="">
+            <h3>Emergency Contact</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/ktadmin/img/icons/where_to_stay.svg">
+            <h3>Where to Stay</h3>
+          </div>
+          <div class="option-card">
+            <img src="https://www.keralatourism.org/ktadmin/img/icons/find_a_tour_operator.svg">
+            <h3>Find a Tour Operator</h3>
+          </div>
+          
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="" style="display: flex;  flex-wrap: wrap; align-items: center; justify-content: center; margin: 80px 0;">
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/assets/img/cbl/home-banner-desktop.webp" alt="">
+     <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/assets/img/cbl/home-banner-desktop.webp" alt="">
+     <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://weddingwedz.com/wp-content/uploads/2025/06/destination-wedding.webp" alt="">
+       <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzJIeLm-k4807t3bUghUXWK2xpCTouBUytoA&s" alt="">
+       <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/images/caravan-tourism/caravan-policy.jpg" alt="">
+        <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnrkN8Fy6_RBcs0c4ZSTL2mRmNynqD94ohTQ&s" alt="">
+        <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGkyMh_rPL1lw7vkQVdpuAJPHMt69cZMcLzw&s" alt="">
+       <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsV9NfbgNIor3aiWC6rjumLjZTNfeNgHDBg&s" alt="">
+        <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhHvARI2pn_pygwG8XTVpZR8XRlPO15AYaw&s" alt="">
+        <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/images/microsites/kochi/fort-kochi.jpg" alt="">
+        <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>
+    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqFL0NqB2S5foiKGhgHJ4ShETOOalkZhb-zw&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQCeAD0gmCmP5E9jlnggP4HHdxgonko1LFag&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://s7ap1.scene7.com/is/image/incredibleindia/top-station-munnar-kerala-1-attr-hero?qlt=82&ts=1726672844426" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2025/05/07110634/temple.jpg" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt51Mg2VxLhhCKLziOazmNtWT4JDCDktwBg&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/_next/image/?url=http%3A%2F%2F127.0.0.1%2Fktadmin%2Fimg%2Fpages%2Fvertical%2Fthekkady-1727621187_be0d7505ad80bf1ab23c.webp&w=3840&q=75" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWaLgCtC9ye_usYrfGuzltVqcKK49MX1QFgA&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/images/microsites/varkala/varkala-1024x768.jpg" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSgWby07QE3ZrOk2FMtjE4iz631-uABRp0RQ&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3XDf8WNlEH_TH9PO7StozxQikZf3t2M74hA&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://www.keralatourism.org/uploads/sabarimala/mobile/pilgrimage-season-20241007124920922798.webp" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bhairavi_16_Areca_palm_leaf_performing.jpg/250px-Bhairavi_16_Areca_palm_leaf_performing.jpg" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+
+    <div class="card" style="width: 500px; height: auto;">
+      <img style="height: 450px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuw6WJAD7xE0yo-yLoZCzwXnadb9Er1XgGJg&s" alt="">
+  <div style="padding: 10px 25px;">
+       <h2 style="font-size: 30px;">Champions Boat League</h2>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-phone"></i>
+        <h4>+91 47 1231 5397</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <i class="fa-solid fa-envelope"></i>
+        <h4>info@dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div style="display: flex; gap: 12px; margin: 20px 0;">
+        <i class="fa fa-globe"></i>
+        <h4>www.dtpcthiruvananthapuram.com</h4>
+      </div>
+      <div class="explore"><a href="./">Explore <i class="fa-solid fa-angle-right"></i></a></div>
+     </div>    </div>
+  </div>
+
+  
+
+
+
+     <section class="newsletter-section">
+
+    <h1>Subscribe to our Newsletter</h1>
+
+    <p>
+      Sign up for Kerala Tourism's monthly newsletter to learn about our events, offers, and more...
+    </p>
+
+    <form class="newsletter-form">
+
+      <div class="input-box">
+        <input type="text" placeholder="Name">
+      </div>
+
+      <div class="input-box">
+        <input type="email" placeholder="Email">
+      </div>
+
+      <button type="submit" class="subscribe-btn">
+        Subscribe
+      </button>
+
+    </form>
+
+  </section>
+
+  
+
+  <!-- Connect with us -->
+  <section class="contact-us">
+   
+
+      
+
+      <div class="services  ">
+        <div class="service-sub flex main-social">
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/ktil-logo.png"
+                alt=""></div>
+            <div class="service-content">
+              <h2>KTIL</h2>
+              <h4>Building God's Own Country</h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/dtpc.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>DTPc</h2>
+              <h4>Discover the best of Kerala through the DTPCs</h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/ktdc.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KTDC</h2>
+              <h4>Discover your perfect stay via KTDC
+
+
+
+              </h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/katps.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KATPS</h2>
+              <h4>Explore Kerala's adventure sports through KATPS
+
+              </h4>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="img flex"> <img src="https://www.keralatourism.org/ktadmin/images/Portfolios/kitts.png" alt="">
+            </div>
+            <div class="service-content">
+              <h2>KITTS</h2>
+              <h4>Building God's Own Country</h4>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-explore flex">
+        <ul>
+          <li>
+            <h2>Explore</h2>
+          </li>
+          <li><a href="./">Classification Schemes</a></li>
+          <li><a href="./"> Official Mobile App</a></li>
+          <li><a href="./"> Newsletter</a></li>
+          <li><a href="./"> Responsible Tourism</a></li>
+          <li><a href="./"> Ecotourism</a></li>
+          <li><a href="./"> Tourism Administrators</a></li>
+        </ul>
+
+
+        <ul>
+          <li>
+            <h2>Travel Hub</h2>
+          </li>
+          <li><a href="./">Kerala at a Glance</a></li>
+          <li><a href="./"> Travel Care</a></li>
+          <li><a href="./"> Plan Your Trip</a></li>
+          <li><a href="./"> Souvenirs</a></li>
+          <li><a href="./"> Travel Tips</a></li>
+          <li><a href="./"> Accommodation</a></li>
+          <li><a href="./"> FAQs</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Nature</h2>
+          </li>
+          <li><a href="./">Hills</a></li>
+          <li><a href="./"> Backwaters</a></li>
+          <li><a href="./"> Beaches</a></li>
+          <li><a href="./"> Wildlife</a></li>
+          <li><a href="./"> Waterfalls</a></li>
+          <li><a href="./"> Islands</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Places</h2>
+          </li>
+          <li><a href="./">Munnar</a></li>
+          <li><a href="./"> Wayanad</a></li>
+          <li><a href="./"> kovalam</a></li>
+          <li><a href="./"> Kumarakom</a></li>
+          <li><a href="./"> Fort Kochi</a></li>
+          <li><a href="./"> varkal</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Specialities</h2>
+          </li>
+          <li><a href="./">Ayurveda</a></li>
+          <li><a href="./"> Monsoon</a></li>
+          <li><a href="./"> Houseboat</a></li>
+          <li><a href="./"> Kerala Food</a></li>
+          <li><a href="./"> festivals</a></li>
+          <li><a href="./"> ArtForms</a></li>
+        </ul>
+
+        <ul>
+          <li>
+            <h2>Media</h2>
+          </li>
+          <li><a href="./">Videos</a></li>
+          <li><a href="./"> Photos</a></li>
+          <li><a href="./"> 360 deg videos</a></li>
+          <li><a href="./"> Royalty Free Photos</a></li>
+          <li><a href="./"> Media Room</a></li>
+          <li><a href="./"> Site map</a></li>
+        </ul>
+      </div>
+
+      <br><br>
+      <hr>
+      <div style="margin-top: 45px; justify-content: center; text-align: center; gap: 22px;
+        " class="imp-link flex">
+        <a href="./">Contact</a>
+        <span>|</span>
+        <a href="./">Terms of use</a>
+        <span>|</span>
+        <a href="./">Privacy and policy</a>
+      </div>
+
+      <div class="copy-rigth-main flex">
+        <div class="copy-right">
+          <h4>All rights reserved © Kerala Tourism | Developed & Maintained by Invis</h4>
+        </div>
+        <div class="social-links">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+          <i class="fa-brands fa-pinterest"></i>
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
