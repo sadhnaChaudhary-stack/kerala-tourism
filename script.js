@@ -274,6 +274,50 @@ if (pauseBtn) {
 
 
 // ===========================
+// BACK TO TOP / SCROLL FEATURE
+// ===========================
+
+(function () {
+  let btn = document.getElementById("back-to-top");
+
+  if (!btn) {
+    btn = document.createElement("button");
+    btn.id = "back-to-top";
+    btn.setAttribute("aria-label", "Back to top");
+    btn.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    document.body.appendChild(btn);
+  }
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+})();
+
+// Smooth-scroll for on-page anchor links (e.g. href="#section")
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  const targetId = link.getAttribute("href");
+  if (targetId.length > 1) {
+    link.addEventListener("click", function (e) {
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
+
+
+
+// ===========================
 // TEST FUNCTION
 // ===========================
 

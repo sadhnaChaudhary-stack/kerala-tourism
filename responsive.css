@@ -1,0 +1,877 @@
+/* ======================================================================
+   RESPONSIVE.CSS — Kerala Tourism site
+   Loaded AFTER style.css and each page's inline <style> block so these
+   rules win the cascade and make the whole site responsive without
+   having to touch the original stylesheet.
+   ====================================================================== */
+
+/* ---------------------------------------------------------------------
+   0. GLOBAL / BASE FIXES
+   - kill the horizontal scrollbar caused by fixed-px elements
+   - smooth scrolling ("scroll feature")
+   - sane defaults for media
+   --------------------------------------------------------------------- */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+* {
+  min-width: 0;
+}
+
+img, video, iframe {
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+/* Everything that used the .flex helper should be allowed to wrap once
+   it runs out of room, instead of forcing the page wider than the
+   viewport. */
+.flex {
+  flex-wrap: wrap;
+}
+
+nav.flex,
+.location-slider.flex {
+  flex-wrap: nowrap;
+}
+
+/* ---------------------------------------------------------------------
+   1. SIDE NAV (hamburger drawer) — make it an actual slide-in drawer
+   on every page (some pages already had this fix, this brings all
+   pages in line and overrides the old inline display:none pattern).
+   --------------------------------------------------------------------- */
+.side-nav {
+  height: 100vh !important;
+  width: 300px !important;
+  max-width: 85vw;
+  background-color: #fff;
+  position: fixed !important;
+  top: 0 !important;
+  right: -320px !important;
+  left: auto !important;
+  z-index: 99999 !important;
+  padding: 30px 20px;
+  display: block !important;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  transition: right 0.35s ease-in-out;
+}
+
+.side-nav.open {
+  right: 0 !important;
+}
+
+/* dim the page behind the drawer on small screens */
+.side-nav::before {
+  content: "";
+}
+
+.side-nav-link a {
+  margin-bottom: 0 !important;
+  padding: 14px 0 !important;
+  display: inline-block;
+}
+
+/* ---------------------------------------------------------------------
+   2. HEADER / NAV
+   --------------------------------------------------------------------- */
+nav {
+  padding: 0 16px !important;
+  gap: 10px;
+}
+
+nav > a img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* ---------------------------------------------------------------------
+   3. HERO / VIDEO SLIDER
+   --------------------------------------------------------------------- */
+.hero-content {
+  width: 60%;
+}
+
+.event-hero h2 {
+  font-size: clamp(30px, 6vw, 65px);
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ---------------------------------------------------------------------
+   4. LOCATION SLIDER (Backwater / Beaches / Hills / Waterfalls strip)
+   --------------------------------------------------------------------- */
+.location-slider {
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 10px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.location-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.location-slider h4 {
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------
+   5. WHERE-TO / EXPERIENCES / PLAN-YOUR-TRIP DROPDOWN PANELS
+   --------------------------------------------------------------------- */
+.where-to,
+#exp-show,
+#plan-show {
+  width: 100%;
+  left: 0;
+  right: 0;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.sub-link ul {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.option-card,
+.plan-card {
+  height: 220px;
+  width: 100%;
+  max-width: 390px;
+  flex: 1 1 260px;
+}
+
+.option-row .row {
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------------
+   6. WHAT'S NEW SLIDER
+   --------------------------------------------------------------------- */
+.what-new-slide {
+  height: 60vh;
+}
+
+.what-new-slide img {
+  height: 60vh;
+}
+
+.overlay {
+  height: 59vh;
+  width: 70%;
+}
+
+.what-text-content {
+  width: 80%;
+  left: 5%;
+}
+
+.slider-container {
+  height: 60vh;
+}
+
+/* ---------------------------------------------------------------------
+   7. KERALA'S STUNNING WONDERS CARDS
+   --------------------------------------------------------------------- */
+.Stunning.flex {
+  flex-wrap: wrap;
+}
+
+.Stunning.flex .card {
+  flex: 1 1 300px;
+  height: 420px;
+}
+
+/* ---------------------------------------------------------------------
+   8. MEMORIES FOR A LIFETIME
+   --------------------------------------------------------------------- */
+.memories {
+  height: auto;
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+.memories video {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.inside-memories {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.memories-textContent {
+  width: 100%;
+  padding-left: 0;
+}
+
+.wrapper {
+  max-width: 100%;
+}
+
+.memories-slider-container {
+  max-width: 100%;
+}
+
+.slider-card {
+  width: 85vw;
+  max-width: 450px;
+  height: 60vh;
+}
+
+.slider-card img {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   9. EVENTS SLIDER
+   --------------------------------------------------------------------- */
+.stunning-slide.active {
+  flex-wrap: wrap;
+}
+
+.event .card {
+  min-width: 260px;
+  flex: 1 1 260px;
+  height: 420px;
+}
+
+.event-wrapper {
+  overflow: visible;
+}
+
+/* ---------------------------------------------------------------------
+   10. GATEWAY / PARALLAX
+   --------------------------------------------------------------------- */
+.gateway .parlax {
+  height: 70vh;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.gateway .parlax h1 {
+  font-size: clamp(32px, 8vw, 53px);
+}
+
+/* ---------------------------------------------------------------------
+   11. POPULAR DESTINATIONS SLIDER
+   --------------------------------------------------------------------- */
+.popular-slider-container.flex {
+  flex-wrap: wrap !important;
+  margin-top: 0 !important;
+}
+
+.gateway .popular-slider-container .card {
+  min-width: 260px;
+  flex: 1 1 260px;
+  width: auto;
+  height: 320px;
+}
+
+/* ---------------------------------------------------------------------
+   12. E-BROCHURES
+   --------------------------------------------------------------------- */
+.containend.flex {
+  flex-wrap: wrap;
+}
+
+.containend img {
+  flex: 1 1 320px;
+  width: 100%;
+  height: auto;
+}
+
+.text-content {
+  margin-left: 0;
+  padding: 20px 30px;
+  flex: 1 1 320px;
+}
+
+/* ---------------------------------------------------------------------
+   13. HOSPITALITY SERVICES
+   --------------------------------------------------------------------- */
+.hospitality-heading {
+  gap: 20px !important;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center !important;
+}
+
+.hospitality-sub {
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.hospitality-sub .form,
+.guidence-div {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  min-height: 260px;
+  padding: 40px 24px;
+}
+
+.hospitality-sub .form {
+  padding: 40px 24px;
+}
+
+.guidence-div .first img,
+.guidence-div .Second img {
+  height: 120px;
+  width: 120px;
+}
+
+/* ---------------------------------------------------------------------
+   14. PHOTO GALLERY / VIDEO GALLERY
+   --------------------------------------------------------------------- */
+.gallery .gallery-slide img {
+  height: 70vh;
+}
+
+.gallery-text-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 30px;
+}
+
+.video-gallery iframe {
+  height: 45vh;
+}
+
+/* ---------------------------------------------------------------------
+   15. CONNECT WITH US / SOCIAL EMBEDS
+   --------------------------------------------------------------------- */
+.main-social {
+  padding: 2px 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-social .page {
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.main-social .page img {
+  width: 100%;
+}
+
+.connect-content {
+  flex: 1 1 280px;
+}
+
+.connect-content h4 {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   16. SERVICE CARDS (KTIL / DTPC / KTDC / KATPS / KITTS)
+   --------------------------------------------------------------------- */
+.service-sub.flex {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services .service-card {
+  width: 100%;
+  max-width: 270px;
+}
+
+/* ---------------------------------------------------------------------
+   17. FOOTER
+   --------------------------------------------------------------------- */
+footer {
+  height: auto;
+  padding: 40px 24px;
+}
+
+.footer-explore.flex {
+  flex-wrap: wrap;
+  gap: 30px 40px;
+}
+
+.footer-explore.flex ul {
+  flex: 1 1 140px;
+}
+
+.copy-rigth-main.flex {
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.social-links i {
+  padding: 8px 14px;
+  margin-right: 6px;
+}
+
+/* ---------------------------------------------------------------------
+   18. INNER PAGES: hills / waterfall / backwater / beaches / jackfruit
+   --------------------------------------------------------------------- */
+.hills-hero,
+.event-hero {
+  padding: 60px 20px;
+}
+
+.kerala {
+  padding: 60px 24px !important;
+}
+
+.kerala p {
+  line-height: 1.6;
+}
+
+.north-kerala .flex,
+.video-slider .flex {
+  flex-wrap: wrap;
+}
+
+.kerala-img {
+  width: 100%;
+  max-width: 450px;
+  height: 60vh;
+}
+
+.kerala-img img {
+  width: 100%;
+}
+
+.first-video {
+  height: 40vh;
+}
+
+.text {
+  width: 60%;
+}
+
+.first.flex {
+  flex-wrap: wrap;
+  height: auto !important;
+}
+
+.row-img {
+  flex: 1 1 260px !important;
+  height: 320px !important;
+  margin-top: 0 !important;
+}
+
+.row-img img {
+  height: 100% !important;
+}
+
+.main-event-content {
+  height: auto;
+  flex-direction: column;
+}
+
+.main-event-content img {
+  width: 100%;
+  height: auto;
+}
+
+.event-text p {
+  padding: 0;
+}
+
+/* ---------------------------------------------------------------------
+   19. LANGUAGES PAGE
+   --------------------------------------------------------------------- */
+.lan-par {
+  margin: 60px 20px;
+}
+
+.card-main {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-container {
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.newsletter-section {
+  padding: 60px 24px;
+}
+
+.input-box input {
+  width: 100%;
+}
+
+/* ---------------------------------------------------------------------
+   20. BACK TO TOP BUTTON (scroll feature)
+   --------------------------------------------------------------------- */
+#back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 99998;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #F79A04;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top.show {
+  display: flex;
+}
+
+#back-to-top:hover {
+  transform: translateY(-4px);
+  background-color: #e08a00;
+}
+
+/* =======================================================================
+   BREAKPOINTS
+   ======================================================================= */
+
+/* ---- Large desktops / laptops (<=1400px) ---- */
+@media (max-width: 1400px) {
+  .memories-textContent {
+    padding-left: 60px;
+  }
+
+  footer {
+    padding: 40px 60px;
+  }
+}
+
+/* ---- Small laptops / tablets landscape (<=1200px) ---- */
+@media (max-width: 1200px) {
+  h1 { font-size: 42px; line-height: 50px; }
+  h2 { font-size: 30px; line-height: 38px; }
+
+  .hero-content {
+    width: 55%;
+  }
+
+  .connect-content h4 {
+    width: 100%;
+  }
+}
+
+/* ---- Tablets (<=992px) ---- */
+@media (max-width: 992px) {
+  nav ul.flex li a {
+    font-size: 16px;
+  }
+
+  .hero-content {
+    width: 65%;
+    right: 5%;
+  }
+
+  .memories-textContent {
+    padding-left: 20px;
+  }
+
+  .Stunning.flex .card,
+  .event .card {
+    flex: 1 1 45%;
+  }
+
+  .gateway .popular-slider-container .card {
+    flex: 1 1 45%;
+  }
+
+  .hospitality-sub {
+    justify-content: center;
+  }
+
+  .footer-explore.flex ul {
+    flex: 1 1 30%;
+  }
+}
+
+/* ---- Large phones / small tablets (<=768px) ---- */
+@media (max-width: 768px) {
+  h1 { font-size: 34px; line-height: 42px; }
+  h2 { font-size: 26px; line-height: 34px; }
+  h3 { font-size: 16px; line-height: 24px; }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Nav: hide the text links, keep search + hamburger; "where to go /
+     experiences / plan your trip" are reachable from the side drawer. */
+  nav > ul.flex:first-of-type {
+    display: none;
+  }
+
+  nav {
+    justify-content: space-between !important;
+    height: 90px;
+  }
+
+  .main-header,
+  .main-header[style] {
+    height: 100vh !important;
+  }
+
+  .hero,
+  .hero[style] {
+    height: 100vh !important;
+  }
+
+  .hero video,
+  .hero-content h2,
+  .hero-content h3 {
+    /* keep hero readable on phones */
+  }
+
+  .hero-content {
+    width: 85%;
+    right: 8%;
+    bottom: 22%;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .hero-content h3 {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  .location-slider {
+    top: auto !important;
+    bottom: 6%;
+    gap: 14px !important;
+  }
+
+  .other-option {
+    bottom: 18%;
+  }
+
+  .head-div {
+    margin: 90px 0 0 0;
+  }
+
+  .option-row {
+    margin-top: 30px;
+  }
+
+  .option-card,
+  .plan-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .what-new-slide {
+    height: 45vh;
+  }
+
+  .what-new-slide img {
+    height: 45vh;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 44vh;
+    left: 0;
+  }
+
+  .what-text-content {
+    width: 90%;
+    left: 5%;
+    top: 25%;
+  }
+
+  .slider-container {
+    height: 45vh;
+  }
+
+  .Stunning.flex .card,
+  .event .card,
+  .gateway .popular-slider-container .card {
+    flex: 1 1 100%;
+    height: 320px;
+  }
+
+  .memories {
+    padding: 40px 0;
+  }
+
+  .memories-textContent h1 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .slider-card {
+    height: 45vh;
+  }
+
+  .gateway .parlax {
+    height: 55vh;
+  }
+
+  .containend img {
+    height: 260px;
+  }
+
+  .hospitality-sub .form,
+  .guidence-div {
+    max-width: 100%;
+  }
+
+  .gallery .gallery-slide img {
+    height: 45vh;
+  }
+
+  .gallery-text-content {
+    padding: 16px 20px;
+  }
+
+  .gallery-controller {
+    right: 20px;
+  }
+
+  .video-gallery iframe {
+    height: 32vh;
+  }
+
+  footer {
+    padding: 30px 20px;
+  }
+
+  .footer-explore.flex ul {
+    flex: 1 1 45%;
+  }
+
+  .kerala {
+    padding: 40px 16px !important;
+  }
+
+  .kerala-img {
+    height: 45vh;
+  }
+
+  .first-video {
+    height: 30vh;
+  }
+
+  .text {
+    width: 80%;
+  }
+
+  .row-img {
+    flex: 1 1 100% !important;
+    height: 260px !important;
+  }
+
+  .card-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-section h1 {
+    font-size: 34px;
+  }
+
+  #back-to-top {
+    bottom: 18px;
+    right: 18px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ---- Phones (<=480px) ---- */
+@media (max-width: 480px) {
+  h1 { font-size: 28px; line-height: 36px; }
+  h2 { font-size: 22px; line-height: 30px; }
+
+  nav > a img {
+    max-width: 110px;
+  }
+
+  .hero-content {
+    width: 90%;
+    right: 5%;
+    bottom: 20%;
+    margin: 0 0 0 12px;
+  }
+
+  .hero-content h3 {
+    display: none;
+  }
+
+  .side-nav {
+    width: 260px !important;
+  }
+
+  .option-card,
+  .plan-card {
+    height: 200px;
+  }
+
+  .what-new-slide,
+  .what-new-slide img,
+  .slider-container {
+    height: 38vh;
+  }
+
+  .gallery .gallery-slide img {
+    height: 38vh;
+  }
+
+  .video-gallery iframe {
+    height: 26vh;
+  }
+
+  .footer-explore.flex ul {
+    flex: 1 1 100%;
+  }
+
+  .card-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
